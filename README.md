@@ -4,6 +4,7 @@ ractive-extensions-crud
 [Ractive](http://www.ractivejs.org/) extension for use with crud.
 
   * [Overview](#overview)
+  * [Install](#install)
   * [Events Listeners](#event-listeners)
   * [Events Emitted](#events-emitted)
   * [See Example](#see-example)
@@ -11,7 +12,7 @@ ractive-extensions-crud
 
 ## Overview
 
-There are a lot of redundant crud operations we do across our project, so the goal of this module is to help speed up the common things. 
+There are a lot of redundant crud operations we do across our project, so the goal of this module is to help speed up the common things.
 
 If you have an ractive template, maybe you want to list everything out in a form and have the data auto-saved on when submitted. Try this:
 
@@ -29,6 +30,27 @@ If you have an ractive template, maybe you want to list everything out in a form
 The part that says `on-submit="crud-update:{{users}}"` is where this extension comes into play. Ractive-extensions-crud listens for the event `crud-update` and then will update with the appropriate data.
 
 To see other event listeners and more information on how to get them working, see [event listeners](#event-listeners).
+
+## Install
+
+
+To get started, you need to include the distributed file in your project.
+
+```
+bower install ractive-extensions-crud
+```
+
+Then you need to make sure that the module is loaded before you use Ractive. It will add the necessary features and event listeners to the Ractive object. If you're using [requirejs](http://requirejs.org/), you could do something like this:
+
+```
+define(['ractive', 'path/to/extension/dist/crud.min'], function(Ractive) {
+  var ractive = new Ractive({
+   /* Define Ractive object here */
+  })
+})
+```
+
+Now the extension is yours to use how you wish.
 
 ## Events Listeners
 
