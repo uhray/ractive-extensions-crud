@@ -1,0 +1,102 @@
+<style>
+
+  body div.myclassname .rv-message {
+    background: #E6E6E6;
+    color: #000;
+  }
+
+</style>
+
+
+<h2>Update one no arguments</h2>
+{{#with users[0]}}
+  <form action="javascript:;" on-submit="crud-update">
+    <label>
+      <span>Name:</span>
+      <input type="text" placeholder="name" value={{name}} />
+    </label>
+    <label>
+      <span>Age:</span>
+      <input type="text" placeholder="age" value={{age}} />
+    </label>
+    <input type="submit" />
+  </form>
+{{/with}}
+<br/><br/>
+
+<h2>Update one, specify path</h2>
+{{#with users[0]}}
+  <form action="javascript:;" on-submit="crud-update:'/users'">
+    <label>
+      <span>Name:</span>
+      <input type="text" placeholder="name" value={{name}} />
+    </label>
+    <label>
+      <span>Age:</span>
+      <input type="text" placeholder="age" value={{age}} />
+    </label>
+    <input type="submit" />
+  </form>
+{{/with}}
+<br/><br/>
+
+
+<h2>Update one, specify path & object</h2>
+{{#with users[0]}}
+<form action="javascript:;" on-submit="crud-update:'/users',{{.}}">
+    <label>
+      <span>Name:</span>
+      <input type="text" placeholder="name" value={{name}} />
+    </label>
+    <label>
+      <span>Age:</span>
+      <input type="text" placeholder="age" value={{age}} />
+    </label>
+    <input type="submit" />
+  </form>
+{{/with}}
+<br/><br/>
+
+<h2>Update one, specify object</h2>
+{{#with users[0]}}
+<form action="javascript:;" on-submit="crud-update:{{.}}">
+    <label>
+      <span>Name:</span>
+      <input type="text" placeholder="name" value={{name}} />
+    </label>
+    <label>
+      <span>Age:</span>
+      <input type="text" placeholder="age" value={{age}} />
+    </label>
+    <input type="submit" />
+  </form>
+{{/with}}
+<br/><br/>
+
+<h2>Many Users</h2>
+<form action="javascript:;" on-submit="crud-update:{{users}}"
+      on-crudUpdate="crud-updated"
+      on-crudUpdateSuccess="crud-updated-success"
+      on-crudUpdateFailure="crud-updated-failure">
+  {{#each users}}
+    <h3>User Information</h3>
+    <label>
+      <span>Name:</span>
+      <input type="text" placeholder="name" value={{.name}} />
+    </label>
+    <label>
+      <span>Age:</span>
+      <input type="text" placeholder="age" value={{.age}} />
+    </label>
+    <a href="javascript:" on-click="crud-delete"
+       on-crudDelete="crud-deleted"
+       on-crudDeleteSuccess="crud-deleted-success"
+       on-crudDeleteFailure="crud-deleted-failure"> Delete</a>
+  {{/each}}
+  <input type="submit" value="save changes" />
+  <input type="button" value="create new user"
+         on-click="crud-create:{{users}},{{users._crud}}"
+         on-crudCreate="crud-created"
+         on-crudCreateSuccess="crud-created-success"
+         on-crudCreateFailure="crud-created-failure" />
+</form>

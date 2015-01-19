@@ -1,0 +1,23 @@
+{
+  "name": "ractive-extensions-validator",
+  "version": "0.0.0",
+  "description": "TODO:",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "uglify-js": "^2.4.16"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "jscs": "^1.7.3",
+    "http-server": "^0.7.4",
+    "json-server": "^0.5.9"
+  },
+  "author": "",
+  "license": "MIT"
+}
