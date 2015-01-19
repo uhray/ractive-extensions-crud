@@ -10,63 +10,17 @@
 
 <h2>Update one no arguments</h2>
 {{#with users[0]}}
-  <form action="javascript:;" on-submit="crud-update">
+<form action="javascript:;" on-submit="crud-update:{{.}}"
+      on-crudUpdate="crud-updated"
+      on-crudUpdateSuccess="crud-updated-success"
+      on-crudUpdateFailure="crud-updated-failure">
     <label>
       <span>Name:</span>
-      <input type="text" placeholder="name" value={{name}} />
+      <input type="text" placeholder="name" value={{.name}} />
     </label>
     <label>
       <span>Age:</span>
-      <input type="text" placeholder="age" value={{age}} />
-    </label>
-    <input type="submit" />
-  </form>
-{{/with}}
-<br/><br/>
-
-<h2>Update one, specify path</h2>
-{{#with users[0]}}
-  <form action="javascript:;" on-submit="crud-update:'/users'">
-    <label>
-      <span>Name:</span>
-      <input type="text" placeholder="name" value={{name}} />
-    </label>
-    <label>
-      <span>Age:</span>
-      <input type="text" placeholder="age" value={{age}} />
-    </label>
-    <input type="submit" />
-  </form>
-{{/with}}
-<br/><br/>
-
-
-<h2>Update one, specify path & object</h2>
-{{#with users[0]}}
-<form action="javascript:;" on-submit="crud-update:'/users',{{.}}">
-    <label>
-      <span>Name:</span>
-      <input type="text" placeholder="name" value={{name}} />
-    </label>
-    <label>
-      <span>Age:</span>
-      <input type="text" placeholder="age" value={{age}} />
-    </label>
-    <input type="submit" />
-  </form>
-{{/with}}
-<br/><br/>
-
-<h2>Update one, specify object</h2>
-{{#with users[0]}}
-<form action="javascript:;" on-submit="crud-update:{{.}}">
-    <label>
-      <span>Name:</span>
-      <input type="text" placeholder="name" value={{name}} />
-    </label>
-    <label>
-      <span>Age:</span>
-      <input type="text" placeholder="age" value={{age}} />
+      <input type="text" placeholder="age" value={{.age}} />
     </label>
     <input type="submit" />
   </form>
