@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "bobby",
-      "age": 23
+      "age": 24
     },
     {
       "id": 3,
@@ -11,9 +11,25 @@
       "age": 12
     },
     {
-      "id": 5,
-      "name": "steve",
-      "age": 7
+      "__events": {},
+      "__once": {
+        "each": [],
+        "read": []
+      },
+      "path": "/users",
+      "data": [
+        {
+          "id": 1,
+          "name": "bobby",
+          "age": 24
+        },
+        {
+          "id": 3,
+          "name": "bobby",
+          "age": 12
+        }
+      ],
+      "id": 4
     }
   ]
 }

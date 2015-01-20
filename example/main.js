@@ -18,6 +18,8 @@ function(Ractive, crud, template) {
     getError: function(d) { return null; }
   });
 
+  c = crud;
+
   crud('/users').read(function(e, users) {
     var ractive = new Ractive({
           el: '#container',

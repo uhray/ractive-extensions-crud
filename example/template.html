@@ -42,14 +42,14 @@
       <span>Age:</span>
       <input type="text" placeholder="age" value={{.age}} />
     </label>
-    <a href="javascript:" on-click="crud-delete"
+    <a href="javascript:" on-click="crud-delete:{{.}}"
        on-crudDelete="crud-deleted"
        on-crudDeleteSuccess="crud-deleted-success"
        on-crudDeleteFailure="crud-deleted-failure"> Delete</a>
   {{/each}}
   <input type="submit" value="save changes" />
   <input type="button" value="create new user"
-         on-click="crud-create:{{users}},{{users._crud}}"
+         on-click="crud-create:{{users}}"
          on-crudCreate="crud-created"
          on-crudCreateSuccess="crud-created-success"
          on-crudCreateFailure="crud-created-failure" />
