@@ -105,7 +105,7 @@ But if you tried this, there is no way for use to know the path in the array.
 
 <a href="#event-crud-create" name="event-crud-create">#</a> crud-create(*array*, [*object*])
 
-  * *array* - the array to create new object on
+  * *array* - the array to create new object on. Alternatively, it can be the url path to use for crud. Like '/api/users'.
   * *object* (optional) - the new object to be appended.
 
 Object should be a javascript object that was retrieved using [crud read](https://github.com/uhray/crud#eo-crud) because it will contain a `._crud` value explaining where it came from.
